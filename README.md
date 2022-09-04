@@ -17,7 +17,7 @@ Dennoch wollen wir den Code der Karte teilen, damit:
 1. transparent wird, wie die Karte funktioniert.
 2. Änderungen und Verbesserungen aus der Community ergänzt werden können.
 
-Für Ergänzungen und Korrekturen einzelner Gruppen ist der E-Mail-Kontakt unter karte@queer-lexikon.net vorzuziehen. Bitte beachte, dass wir Meldungen nur von Gruppenleitungen annehmen können. 
+Für Ergänzungen und Korrekturen einzelner Gruppen ist der E-Mail-Kontakt unter karte@queer-lexikon.net vorzuziehen. Bitte beachte, dass wir Meldungen nur von Gruppenleitungen annehmen können.
 
 ## Wie funktioniert die Karte?
 
