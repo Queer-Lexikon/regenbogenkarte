@@ -1,0 +1,17 @@
+name: Send repository_dispatch event to parent repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-parent-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: Queer-Lexikon/karte-schmarte
+          event-type: update-submodules
