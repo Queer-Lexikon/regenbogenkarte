@@ -68,7 +68,7 @@ für Schritt die Karte auf eines der Frameworks umzubauen. Nur aktuell besteht k
 ## Lizenzen
 
 - Code: OSL-3.0
-- Icons: ???
+- Icons: CC-BY-ND 4.0
 - Kartenmaterial: CC-BY-SA 2.0
 
 ## Dankeschön ❤️
