@@ -33,7 +33,7 @@
 		"vite": "^3.0.4"
 	},
 	"dependencies": {
-		"@fontsource/ubuntu": "^4.5.10",
+		"@fontsource/ubuntu": "^4.5.11",
 		"leaflet": "^1.8.0",
 		"leaflet.markercluster": "^1.5.3"
 	}
