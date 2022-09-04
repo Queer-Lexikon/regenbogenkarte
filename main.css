@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply m-0 p-0 h-screen w-screen font-sans;
+	@apply flex flex-col;
+}
+
+.menu:not(.open) {
+	@apply hidden;
+}
+
+.map-popup .leaflet-popup-content-wrapper {
+	@apply font-sans;
+	@apply px-6 py-4 rounded shadow-xl;
+}
+.map-popup .leaflet-popup-content {
+	@apply m-0;
+	@apply leading-relaxed;
+	@apply text-sm;
+}
+.map-popup .leaflet-container a.leaflet-popup-close-button {
+	@apply w-6 h-6 text-xl;
+}
+.map-popup .leaflet-popup-content p {
+	@apply m-0 mb-1;
+}

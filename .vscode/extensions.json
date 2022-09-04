@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"ms-playwright.playwright",
+		"csstools.postcss",
+		"esbenp.prettier-vscode",
+		"bradlc.vscode-tailwindcss"
+	]
+}

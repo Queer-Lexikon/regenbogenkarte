@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="theme-color" content="#faedfa" />
+		<title>tra-la-card</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="module" src="./main.ts"></script>
+	</head>
+	<body class="bg-ql-pink">
+		<!-- MOBILE HEADER START -->
+		<header class="lg:hidden border-b border-b-ql-purple">
+			<section class="p-4 pt-6 text-neutral-700 flex flex-row">
+				<div class="flex-grow">
+					<h1 class="font-semibold text-lg mb-1">tra-la-card</h1>
+					<p>Ein Dienst vom <i>Queer Lexikon e.V.</i></p>
+				</div>
+				<button
+					type="button"
+					class="p-2"
+					id="open-menu-btn"
+					aria-expanded="false"
+					aria-controls="menu"
+				>
+					<span class="sr-only">Menü öffnen</span>
+					<!-- Heroicon: menu -->
+					<svg
+						class="w-6 h-6"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"
+						></path>
+					</svg>
+				</button>
+			</section>
+			<section class="p-4 bg-ql-purple text-white" aria-labelledby="search-for-city-header-mobile">
+				<h2 id="search-for-city-header-mobile" class="sr-only">
+					Suche deine Stadt oder Postleitzahl
+				</h2>
+				<form method="get" class="flex flex-row">
+					<div class="max-w-xl">
+						<label for="city-mobile" class="block text-sm font-medium"
+							>Name deiner Stadt / Postleitzahl</label
+						>
+						<div class="flex flex-row mt-1 space-x-4">
+							<input
+								type="text"
+								name="city"
+								id="city-mobile"
+								autocomplete="address-level2"
+								class="focus:ring-accent-300 focus:border-accent-500 block w-full sm:text-sm border-gray-300 rounded text-neutral-900"
+								placeholder="Entenhausen"
+							/>
+							<button
+								type="submit"
+								class="inline-flex items-center px-4 py-2 border border-white text-sm font-medium rounded text-white bg-accent-800 hover:bg-accent-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-600"
+							>
+								Suchen
+							</button>
+						</div>
+					</div>
+				</form>
+			</section>
+		</header>
+		<!-- MOBILE HEADER END -->
+
+		<!-- DESKTOP HEADER START -->
+		<header class="hidden lg:grid grid-flow-col gap-8 border-b border-b-ql-purple">
+			<section class="mx-4 md:mx-8 lg:mx-12 my-8 text-neutral-700">
+				<h1 class="font-semibold text-lg mb-1">tra-la-carte</h1>
+				<p>
+					Eine Übersichtskarte über queere Jugendgruppen in Deutschland, Österreich und der Schweiz.
+					Betrieben und gewartet vom
+					<a href="https://queer-lexikon.net/">Queer Lexikon e.V.</a>
+				</p>
+				<p>
+					Du möchtest einen Eintrag ergänzen, korrigieren oder entfernen?
+					<a class="underline" href="mailto:karte@queer-lexikon.de"
+						>Dann meld dich bei uns per Mail!</a
+					>
+					Bitte beachte, dass wir Meldungen nur von Gruppenleitungen annehmen können.
+				</p>
+				<nav>
+					<ul class="flex gap-4 underline mt-4 text-sm">
+						<li>
+							<a href="https://queer-lexikon.net/impressum/">Impressum</a>
+						</li>
+						<li>
+							<a href="https://queer-lexikon.net/datenschutz/">Datenschutz</a>
+						</li>
+					</ul>
+				</nav>
+			</section>
+			<section
+				class="px-8 lg:px-12 py-8 bg-ql-purple text-white"
+				aria-labelledby="search-own-city-desktop"
+			>
+				<h2 class="sr-only" id="search-own-city-desktop">Suche deine Stadt oder Postleitzahl</h2>
+				<form method="get" class="flex flex-row">
+					<div class="max-w-xl">
+						<label for="city" class="block text-sm font-medium"
+							>Name deiner Stadt oder Postleitzahl</label
+						>
+						<div class="flex flex-row mt-1 space-x-4">
+							<input
+								type="text"
+								name="city"
+								id="city"
+								autocomplete="address-level2"
+								class="focus:ring-accent-300 focus:border-accent-500 block w-full sm:text-sm border-gray-300 rounded text-neutral-900"
+								placeholder="Entenhausen"
+								aria-describedby="city-description"
+							/>
+							<button
+								type="submit"
+								class="inline-flex items-center px-4 py-2 border border-white text-sm font-medium rounded text-white bg-accent-800 hover:bg-accent-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-600"
+							>
+								Suchen
+							</button>
+						</div>
+						<p class="mt-2 text-sm text-white" id="city-description">
+							Dein Ort oder deine Postleitzahl wird zu keinem Zeitpunkt von uns gespeichert. Wir
+							nutzen die OpenStreetMap API, um die Koordinaten zu finden. Du kannst aber auch
+							einfach auf der Karte nach Orten in deiner Nähe suchen.
+						</p>
+					</div>
+				</form>
+			</section>
+		</header>
+		<!-- DESKTOP HEADER END -->
+
+		<template id="legend-list-entry">
+			<li class="flex flex-col lg:flex-row items-center mb-2 last:mb-0">
+				<img src="to_be_set" alt="" class="w-12 h-12 mr-4" />
+				<span class="text-sm">description</span>
+			</li>
+		</template>
+		<section class="flex-grow z-0 relative" aria-labelledby="map-header">
+			<h2 id="map-header" class="sr-only">Karte</h2>
+			<div id="map" aria-label="Karte mit vielen queeren Jugendverbänden" class="h-full"></div>
+
+			<section
+				aria-labelledby="legend-header"
+				id="legend"
+				class="z-[5000] hidden absolute top-0 inset-x-0 lg:right-4 lg:top-4 lg:left-auto bg-ql-pink shadow-lg lg:rounded border-white lg:border lg:px-6 p-4 md:flex flex-row items-center lg:flex-col"
+			>
+				<h2 id="legend-header" class="font-semibold text-center mb-4 mr-8">Legende:</h2>
+				<ul
+					data-id="legend-list"
+					class="flex flex-row lg:flex-col items-baseline gap-8 lg:gap-4"
+				></ul>
+			</section>
+		</section>
+
+		<!-- HAMBURGER MENU START -->
+		<div class="relative z-40 lg:hidden menu" id="menu" role="dialog" aria-modal="true">
+			<!-- backdrop -->
+			<div class="fixed inset-0 bg-neutral-600 bg-opacity-75 backdrop-blur-sm"></div>
+
+			<div class="fixed inset-0 flex z-40">
+				<div class="flex-shrink-0 w-14 flex-grow" aria-hidden="true">
+					<!-- Dummy element to force sidebar to shrink to fit close icon -->
+				</div>
+				<div class="relative flex-1 flex flex-col max-w-sm w-full pt-6 bg-ql-pink">
+					<!-- close button-->
+					<div class="absolute top-0 left-0 -ml-12 pt-2">
+						<button
+							type="button"
+							id="close-menu-btn"
+							class="mr-2 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+						>
+							<span class="sr-only">Menü schließen</span>
+							<!-- Heroicon name: outline/x -->
+							<svg
+								class="h-6 w-6 text-white"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								aria-hidden="true"
+							>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
+					</div>
+
+					<div class="flex-1 px-4 space-y-4">
+						<p class="font-semibold text-neutral-700 text-lg mb-1">tra-la-carte</p>
+						<p>
+							Eine Übersichtskarte über queere Jugendverbände in Deutschland, Österreich und der
+							Schweiz. Betrieben und gewartet vom Queer Lexikon e.V.
+						</p>
+						<p>
+							Du möchtest einen Eintrag ergänzen, korrigieren oder entfernen?
+							<a class="underline" href="mailto:karte@queer-lexikon.de"
+								>Dann meld dich bei uns per Mail!</a
+							>
+							Bitte beachte, dass wir Meldungen nur von Gruppenleitungen annehmen können.
+						</p>
+						<p>
+							Dein Ort wird zu keinem Zeitpunkt von uns gespeichert. Wir nutzen die OpenStreetMap
+							API, um die Koordinaten zu finden. Du kannst aber auch einfach auf der Karte nach
+							Orten in deiner Nähe suchen.
+						</p>
+						<div>
+							<h2 class="font-semibold text-center mb-4">Legende:</h2>
+							<ul data-id="legend-list" class="flex flex-row gap-4"></ul>
+						</div>
+
+						<nav>
+							<ul class="flex gap-4 underline mt-4 text-sm">
+								<li>
+									<a href="https://queer-lexikon.net/impressum/">Impressum</a>
+								</li>
+								<li>
+									<a href="https://queer-lexikon.net/datenschutz/">Datenschutz</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- HAMBURGER MENU END -->
+
+		<!-- #region Emergency button -->
+		<button
+			id="emergency-button"
+			class="bg-red-800 bottom-0 sticky text-white px-4 py-3 z-[1000] md:absolute md:right-2 md:bottom-6 md:rounded-full"
+		>
+			Notausgang
+		</button>
+		<!-- #endregion -->
+	</body>
+</html>
