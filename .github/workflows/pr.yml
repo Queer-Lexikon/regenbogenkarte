@@ -12,11 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Format files using prettier
-        run: npm run format
+      - name: Format files
+        run: make format
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         name: Commit possible changes
@@ -27,8 +24,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
-
       - name: Build the project
-        run: npm run build
+        run: make build
