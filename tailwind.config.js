@@ -18,6 +18,10 @@ module.exports = {
 			fontFamily: {
 				sans: ["Ubuntu", ...defaultTheme.fontFamily.sans],
 			},
+			zIndex: {
+				emergencyButton: 1000,
+				menu: 1001,
+			},
 		},
 	},
 	plugins: [require("@tailwindcss/forms")],
