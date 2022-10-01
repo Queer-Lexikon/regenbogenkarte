@@ -9,3 +9,10 @@ export const setupEmergencyButton = () => {
 		location.replace(NAVIGATE_TO_URI);
 	});
 };
+
+export const setupResetButton = () => {
+	const btn = <HTMLButtonElement>document.getElementById("reset-button");
+	btn?.addEventListener("click", () => {
+		window.location.reload();
+	});
+};
