@@ -233,18 +233,19 @@
 		<!-- HAMBURGER MENU END -->
 
 		<!-- #region Emergency button -->
-		<button
+		<div
+			class="flex sticky md:absolute bottom-0 justify-evenly z-emergencyButton md:flex-col gap-y-2 md:bottom-6 md:right-2"
+		>
+			<button
 				id="reset-button"
-				class="bg-ql-purple bottom-0 sticky text-white px-4 py-3 md:absolute md:right-2 md:bottom-20 md:rounded-full"
-		>
-			Reset
-		</button>
-		<button
-			id="emergency-button"
-			class="bg-red-800 bottom-0 sticky text-white px-4 py-3 z-emergencyButton md:absolute md:right-2 md:bottom-6 md:rounded-full"
-		>
-			Notausgang
-		</button>
+				class="bg-ql-purple text-white px-4 py-3 md:rounded-full w-full border-r border-white"
+			>
+				Reset
+			</button>
+			<button id="emergency-button" class="bg-red-800 text-white px-4 py-3 md:rounded-full w-full">
+				Notausgang
+			</button>
+		</div>
 		<!-- #endregion -->
 	</body>
 </html>
