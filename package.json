@@ -34,7 +34,7 @@
 	},
 	"dependencies": {
 		"@fontsource/ubuntu": "^4.5.11",
-		"leaflet": "^1.9.1",
+		"leaflet": "^1.9.2",
 		"leaflet.markercluster": "^1.5.3"
 	}
 }
