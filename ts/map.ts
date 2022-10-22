@@ -30,7 +30,11 @@ type Organisation = {
 let map: L.Map;
 export function initializeMap() {
 	map = L.map("map").setView([51.351, 10.454], MIN_ZOOM_LEVEL); // focus on germany
-	map.locate({ setView: true, maxZoom: DEFAULT_ZOOM_LEVEL });
+	document.querySelectorAll(".locate-button").forEach((item) => {
+		item.addEventListener("click", (event) => {
+			map.locate({ setView: true, maxZoom: DEFAULT_ZOOM_LEVEL });
+		});
+	});
 
 	L.tileLayer("https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png", {
 		maxZoom: MAX_ZOOM_LEVEL,
