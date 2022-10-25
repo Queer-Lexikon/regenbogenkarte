@@ -16,3 +16,11 @@ export const setupResetButton = () => {
 		window.location.reload();
 	});
 };
+
+export const setupHeaderButton = () => {
+	const btn = <HTMLButtonElement>document.getElementById("header-button");
+	const header = <HTMLElement>document.getElementById("mobile-header");
+	btn?.addEventListener("click", () => {
+		header.classList.toggle("max-md:hidden");
+	});
+};

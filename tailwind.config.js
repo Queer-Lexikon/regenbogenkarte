@@ -20,6 +20,7 @@ module.exports = {
 			},
 			zIndex: {
 				emergencyButton: 1000,
+				headerButton: 1000,
 				menu: 1001,
 			},
 		},
