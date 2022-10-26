@@ -1,6 +1,6 @@
 const openClass = "open";
 
-export const setupHamburger = () => {
+export const setupInfoButton = () => {
 	const menu = document.getElementById("menu")!;
 	const openBtn = document.getElementById("open-menu-btn")!;
 	const closeBtn = document.getElementById("close-menu-btn")!;

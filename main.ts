@@ -1,6 +1,6 @@
 import "./main.css";
 import { initializeForms } from "./ts/form";
-import { setupHamburger } from "./ts/hamburger";
+import { setupInfoButton } from "./ts/info-menu";
 import { initializeMap } from "./ts/map";
 import "@fontsource/ubuntu/latin.css";
 import { setupLegend } from "./ts/legend";
@@ -10,7 +10,7 @@ import { addGoatCounter } from "./ts/goatcounter";
 document.addEventListener("DOMContentLoaded", () => {
 	initializeMap();
 	initializeForms();
-	setupHamburger();
+	setupInfoButton();
 	setupLegend();
 	setupEmergencyButton();
 	setupResetButton();
