@@ -12,8 +12,8 @@
 		<!-- MOBILE HEADER START -->
 		<button
 			title="Menü anzeigen/ausblenden"
-			id="header-button"
-			class="md:hidden z-headerButton fixed top-5 right-14 bg-ql-purple w-10 h-10 rounded-full drop-shadow-lg flex justify-center items-center text-white text-sm hover:drop-shadow-2xl"
+			id="hamburger-button"
+			class="md:hidden js-header-button z-headerButton fixed top-7 right-4 bg-ql-purple w-10 h-10 rounded-full drop-shadow-lg flex justify-center items-center text-white text-sm hover:drop-shadow-2xl"
 		>
 			<span class="sr-only">Menü anzeigen/ausblenden</span>
 			<!-- TODO: Platzhalter durch sinnvolen Text ersetzen-->
@@ -34,20 +34,37 @@
 					aria-controls="menu"
 				>
 					<span class="sr-only">Info öffnen</span>
-					<!-- Heroicon: menu -->
 					<svg
-						class="w-6 h-6"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-6 h-6"
 					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4 6h16M4 12h16M4 18h16"
-						></path>
+							d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+						/>
+					</svg>
+				</button>
+
+				<button title="Menü anzeigen/ausblenden" class="js-header-button md:hidden">
+					<span class="sr-only">Menü anzeigen/ausblenden</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-6 h-6"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+						/>
 					</svg>
 				</button>
 			</section>
