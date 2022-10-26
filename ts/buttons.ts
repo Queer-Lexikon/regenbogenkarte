@@ -17,10 +17,16 @@ export const setupResetButton = () => {
 	});
 };
 
-export const setupHeaderButton = () => {
-	const btn = <HTMLButtonElement>document.getElementById("header-button");
+export const setupHamburgerButton = () => {
+	let isOpen = false;
 	const header = <HTMLElement>document.getElementById("mobile-header");
-	btn?.addEventListener("click", () => {
-		header.classList.toggle("max-md:hidden");
-	});
+	const hamburger = <HTMLButtonElement>document.getElementById("hamburger-button")!;
+
+	document.querySelectorAll<HTMLButtonElement>(".js-header-button").forEach((btn) =>
+		btn.addEventListener("click", () => {
+			header.classList.toggle("max-md:hidden", isOpen);
+			hamburger.classList.toggle("hidden", !isOpen);
+			isOpen = !isOpen;
+		}),
+	);
 };
