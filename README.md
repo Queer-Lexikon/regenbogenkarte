@@ -75,3 +75,7 @@ für Schritt die Karte auf eines der Frameworks umzubauen. Nur aktuell besteht k
 
 Ein großes Dankeschön geht an all die lieben Vereine und Organisationen, die wir auf unserer Karte anzeigen dürfen.
 Ein weiteres Dankeschön geht raus an den FOSSGIS e.V. für die Bereitstellung der Infrastruktur, auf dem die Karte aufbaut.
+
+Und ein besonderes Dankeschön auch an folgende Wesen:
+
+- [CherryKitten](https://github.com/CherryKitten) für ihre Pull Requests und die Verbesserung der Karte.
