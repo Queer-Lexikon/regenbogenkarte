@@ -6,3 +6,11 @@ updates:
       interval: "monthly"
     reviewers:
       - "chloe-the-catgirl"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    reviewers:
+      - chloe-the-catgirl
+    open-pull-requests-limit: 5
