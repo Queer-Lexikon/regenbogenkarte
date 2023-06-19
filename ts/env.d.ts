@@ -9,4 +9,7 @@ interface ImportMetaEnv {
 	// Although it's actually a boolean, all environment variables are strings, so we
 	// type it as string here as well.
 	readonly VITE_QUEER_LEXIKON_PRIVATE?: string;
+
+	// The backend URL for the upcoming django backend.
+	readonly VITE_QUEER_LEXIKON_BACKEND_URL?: string;
 }
