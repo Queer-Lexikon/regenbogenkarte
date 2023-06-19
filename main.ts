@@ -7,8 +7,8 @@ import { setupLegend } from "./ts/legend";
 import { setupEmergencyButton, setupResetButton, setupHamburgerButton } from "./ts/buttons";
 import { addGoatCounter } from "./ts/goatcounter";
 
-document.addEventListener("DOMContentLoaded", () => {
-	initializeMap();
+document.addEventListener("DOMContentLoaded", async () => {
+	await initializeMap();
 	initializeForms();
 	setupInfoButton();
 	setupLegend();
