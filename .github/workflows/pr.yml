@@ -1,6 +1,8 @@
 name: Code quality verification
 
 on:
+  merge_group:
+    types: [checks_requested]
   pull_request:
     types:
       - "opened"
@@ -9,6 +11,7 @@ on:
 jobs:
   format:
     runs-on: ubuntu-latest
+    if: "${{ github.event_name == 'pull_request' }}"
     permissions:
       contents: write
 
