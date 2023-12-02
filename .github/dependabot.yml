@@ -5,11 +5,11 @@ updates:
     schedule:
       interval: "weekly"
     reviewers:
-      - "chloe-the-catgirl"
+      - nachtjasmin
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
     reviewers:
-      - chloe-the-catgirl
+      - nachtjasmin
