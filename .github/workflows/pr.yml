@@ -14,9 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
       - name: Format files
         run: make format
-
       - uses: stefanzweifel/git-auto-commit-action@v5
         name: Commit possible changes
         with:
