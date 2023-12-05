@@ -13,3 +13,7 @@ updates:
       interval: "weekly"
     reviewers:
       - nachtjasmin
+    groups:
+      all:
+        patterns: ["*"]
+        update-types: [ minor, patch ]
