@@ -22,7 +22,7 @@
 	},
 	"homepage": "https://github.com/Queer-Lexikon/regenbogenkarte#readme",
 	"devDependencies": {
-		"@playwright/test": "^1.43.1",
+		"@playwright/test": "^1.44.0",
 		"@tailwindcss/forms": "^0.5.7",
 		"@types/leaflet": "^1.9.12",
 		"@types/leaflet.markercluster": "^1.5.4",
