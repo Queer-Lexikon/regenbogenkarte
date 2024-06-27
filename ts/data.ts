@@ -6,10 +6,7 @@ export const loadJSON = async () => {
 		return data;
 	}
 
-	const resp = await fetch(import.meta.env.VITE_QUEER_LEXIKON_BACKEND_URL, {
-		cache: "only-if-cached",
-		method: "GET",
-	});
+	const resp = await fetch(import.meta.env.VITE_QUEER_LEXIKON_BACKEND_URL);
 
 	if (!resp.ok) {
 		console.warn("Loading the data from the backend failed, using compiled JSON as fallback.");
