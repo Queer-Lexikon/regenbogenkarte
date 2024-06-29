@@ -2,12 +2,12 @@ import L from "leaflet";
 import "leaflet.markercluster";
 
 import "leaflet/dist/leaflet.css";
-import data from "../data/orgas.json";
 
 import defaultImage from "../assets/default.svg";
 import limitedImage from "../assets/limited.svg";
 import supportImage from "../assets/support.svg";
 import { DEFAULT_ZOOM_LEVEL, ICON_SIZE, MAX_ZOOM_LEVEL, MIN_ZOOM_LEVEL } from "./config";
+import { loadJSON as loadData } from "./data";
 
 type Organisation = {
 	country: string;
@@ -28,7 +28,7 @@ type Organisation = {
 };
 
 let map: L.Map;
-export function initializeMap() {
+export async function initializeMap() {
 	map = L.map("map").setView([51.351, 10.454], MIN_ZOOM_LEVEL); // focus on germany
 	document.querySelectorAll(".locate-button").forEach((item) => {
 		item.addEventListener("click", (event) => {
@@ -73,6 +73,7 @@ export function initializeMap() {
 			});
 		},
 	});
+	const data = await loadData();
 	data.forEach((row) => {
 		const marker = createMarker(row);
 		if (marker) markers.addLayer(marker);
