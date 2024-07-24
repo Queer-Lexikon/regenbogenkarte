@@ -26,3 +26,15 @@ body {
 .map-popup .leaflet-popup-content p {
 	@apply m-0 mb-1;
 }
+
+li.contact-email::marker {
+	content: "📧";
+}
+
+li.contact-phone::marker {
+	content: "☎";
+}
+
+li.contact-website::marker {
+	content: "🌐";
+}

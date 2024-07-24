@@ -9,13 +9,28 @@ import supportImage from "../assets/support.svg";
 import { DEFAULT_ZOOM_LEVEL, ICON_SIZE, MAX_ZOOM_LEVEL, MIN_ZOOM_LEVEL } from "./config";
 import { loadJSON as loadData } from "./data";
 
+type OrgEmail = {
+	label: string;
+	email: string;
+};
+
+type OrgPhone = {
+	label: string;
+	phone: string;
+};
+
+type OrgWebsite = {
+	label: string;
+	url: string;
+};
+
 type Organisation = {
 	country: string;
 	state: string;
 	name: string;
-	email?: string;
-	website?: string;
-	phone?: string;
+	emails: OrgEmail[];
+	websites: OrgWebsite[];
+	phones: OrgPhone[];
 	location: {
 		address?: string;
 		lon: number;
@@ -117,9 +132,15 @@ const buildContent = (o: Organisation): string => {
 <address class="inline">${o.location.address ?? "auf Nachfrage"}</address>
 <ul class="list-disc my-4 pl-2 list-inside">`;
 
-	if (o.website) result += `<li><a href="${o.website}">Zur Webseite</a></li>`;
-	if (o.email) result += `<li><a href="mailto:${o.email}">E-Mail</a></li>`;
-	if (o.phone) result += `<li>Telefon: <a href="tel:${o.phone}">${o.phone}</a></li>`;
+	o.websites.forEach((website) => {
+		result += `<li class="contact-website"><a href="${website.url}">${website.label}</a></li>`;
+	});
+	o.emails.forEach((email) => {
+		result += `<li class="contact-email"><a href="mailto:${email.email}">${email.label}</a></li>`;
+	});
+	o.phones.forEach((phone) => {
+		result += `<li class="contact-phone">${phone.label}: <a href="tel:${phone.phone}">${phone.phone}</a></li>`;
+	});
 	result += `</ul>`;
 
 	if (o.activities && o.activities !== "")
