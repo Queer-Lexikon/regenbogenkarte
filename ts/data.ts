@@ -13,6 +13,13 @@ export const loadJSON = async () => {
 		return data;
 	}
 
-	const json = await resp.json();
-	return json;
+	return resp
+		.json()
+		.then((json) => {
+			return json;
+		})
+		.catch((error) => {
+			console.warn("Loading JSON from returnd content failed, using compiled JSON as fallback.");
+			return data;
+		});
 };
