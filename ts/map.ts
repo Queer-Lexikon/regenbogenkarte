@@ -74,7 +74,7 @@ export async function initializeMap() {
 		},
 	});
 	const data = await loadData();
-	data.forEach((row) => {
+	data.forEach((row: Organisation) => {
 		const marker = createMarker(row);
 		if (marker) markers.addLayer(marker);
 	});
