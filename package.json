@@ -5,8 +5,10 @@
 	"main": "main.js",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "run-s typecheck build_only",
+		"build_only": "vite build",
 		"preview": "vite preview",
+		"typecheck": "tsc --noEmit",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"test": "playwright test"
@@ -27,9 +29,11 @@
 		"@types/leaflet": "^1.9.12",
 		"@types/leaflet.markercluster": "^1.5.4",
 		"autoprefixer": "^10.4.19",
+		"npm-run-all2": "^6.2.2",
 		"postcss": "^8.4.39",
 		"prettier": "^3.3.3",
 		"tailwindcss": "^3.4.6",
+		"typescript": "^5.5.4",
 		"vite": "^5.3.4"
 	},
 	"dependencies": {
