@@ -3,8 +3,19 @@
 		"country": "Deutschland",
 		"state": "Niedersachsen",
 		"name": "Einhornhöhle",
-		"email": "pferd@mail.gay",
-		"website": "http://localhost",
+		"emails": [
+			{
+				"label": "E-Mail",
+				"email": "pferd@mail.gay"
+			}
+		],
+		"websites": [
+			{
+				"label": "Website",
+				"url": "http://localhost"
+			}
+		],
+		"phones": [],
 		"location": {
 			"address": "Einhornhöhle, August Großkopf-Weg, Herzberg",
 			"lon": 51.635,
