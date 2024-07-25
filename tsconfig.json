@@ -7,6 +7,6 @@
 		"target": "ES2015",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
+		"allowSyntheticDefaultImports": true
 	}
 }
