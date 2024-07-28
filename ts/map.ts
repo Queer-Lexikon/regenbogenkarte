@@ -130,17 +130,22 @@ const buildContent = (o: Organisation): string => {
 	let result = `
   <h3 class="font-semibold text-base">${o.name}</h3>
 <address class="inline">${o.location.address ?? "auf Nachfrage"}</address>
-<ul class="list-disc my-4 pl-2 list-inside">`;
+<ul class="my-4 space-y-1 pl-2 list-inside">`;
 
-	o.websites.forEach((website) => {
-		result += `<li class="contact-website"><a href="${website.url}">${website.label}</a></li>`;
-	});
-	o.emails.forEach((email) => {
-		result += `<li class="contact-email"><a href="mailto:${email.email}">${email.label}</a></li>`;
-	});
-	o.phones.forEach((phone) => {
-		result += `<li class="contact-phone">${phone.label}: <a href="tel:${phone.phone}">${phone.phone}</a></li>`;
-	});
+	const li = (label: string, link: string, icon: string): string => {
+		return `<li>
+		<span aria-hidden=true class=mr-2>${icon}</span>
+		<a href="${link}" class="hover:underline">
+			 ${label}
+		</a>
+	</li>`;
+	};
+
+	for (const { label, url } of o.websites) result += li(label, url, "🌐");
+	for (const { label, email } of o.emails) result += li(label, email, "📧");
+	for (const { label, phone } of o.phones)
+		result += li(`${label} (${phone})`, "tel:" + phone, "☎");
+
 	result += `</ul>`;
 
 	if (o.activities && o.activities !== "")
