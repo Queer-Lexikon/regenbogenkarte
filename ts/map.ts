@@ -17,6 +17,7 @@ type OrgEmail = {
 type OrgPhone = {
 	label: string;
 	phone: string;
+	phone_rfc3966: string;
 };
 
 type OrgWebsite = {
@@ -143,8 +144,8 @@ const buildContent = (o: Organisation): string => {
 
 	for (const { label, url } of o.websites) result += li(label, url, "🌐");
 	for (const { label, email } of o.emails) result += li(label, email, "📧");
-	for (const { label, phone } of o.phones)
-		result += li(`${label} (${phone})`, "tel:" + phone, "☎");
+	for (const { label, phone, phone_rfc3966 } of o.phones)
+		result += li(`${label} (${phone})`, phone_rfc3966, "☎");
 
 	result += `</ul>`;
 

@@ -15,7 +15,13 @@
 				"url": "http://localhost"
 			}
 		],
-		"phones": [],
+		"phones": [
+			{
+				"label": "Büro",
+				"phone": "+49 234 56789",
+				"phone_rfc3966": "tel:+49-234-56789"
+			}
+		],
 		"location": {
 			"address": "Einhornhöhle, August Großkopf-Weg, Herzberg",
 			"lon": 51.635,
