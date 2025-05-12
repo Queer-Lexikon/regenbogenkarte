@@ -38,7 +38,7 @@
 	},
 	"dependencies": {
 		"@fontsource/ubuntu": "^5.2.5",
-		"@types/node": "^22.15.9",
+		"@types/node": "^22.15.17",
 		"leaflet": "^1.9.4",
 		"leaflet.markercluster": "^1.5.3"
 	}
