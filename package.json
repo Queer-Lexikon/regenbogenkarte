@@ -37,8 +37,8 @@
 		"vite": "^6.3.5"
 	},
 	"dependencies": {
-		"@fontsource/ubuntu": "^5.2.5",
-		"@types/node": "^22.15.29",
+		"@fontsource/ubuntu": "^5.2.6",
+		"@types/node": "^22.15.30",
 		"leaflet": "^1.9.4",
 		"leaflet.markercluster": "^1.5.3"
 	}
