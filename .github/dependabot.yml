@@ -4,15 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    reviewers:
-      - nachtjasmin
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
-    reviewers:
-      - nachtjasmin
     groups:
       all:
         patterns: ["*"]
