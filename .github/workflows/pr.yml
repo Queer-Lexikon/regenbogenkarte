@@ -22,7 +22,7 @@ jobs:
           node-version-file: ".node-version"
       - name: Format files
         run: make format
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         name: Commit possible changes
         with:
           commit_message: "style: format files using prettier"
