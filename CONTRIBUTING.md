@@ -39,7 +39,6 @@ Wenn du was gefunden hast, bist du herzlichst eingeladen, ein Pull Request mit d
 1. Repository forken.
 
 - mit GitHub Desktop:
-
   - [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/getting-started-with-github-desktop) wird dich durch die Installation von GitHub Desktop führen.
   - Sobald GitHub Desktop eingerichtet ist, kannst du es zum [forken des Repositories](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop) nutzen!
 
