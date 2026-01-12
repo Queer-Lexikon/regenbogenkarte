@@ -4,12 +4,3 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    groups:
-      all:
-        patterns: ["*"]
-        update-types: [minor, patch]
