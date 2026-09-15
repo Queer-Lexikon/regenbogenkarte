@@ -9,13 +9,29 @@ import supportImage from "../assets/support.svg";
 import { DEFAULT_ZOOM_LEVEL, ICON_SIZE, MAX_ZOOM_LEVEL, MIN_ZOOM_LEVEL } from "./config";
 import { loadJSON as loadData } from "./data";
 
+type OrgEmail = {
+	label: string;
+	email: string;
+};
+
+type OrgPhone = {
+	label: string;
+	phone: string;
+	phone_rfc3966: string;
+};
+
+type OrgWebsite = {
+	label: string;
+	url: string;
+};
+
 type Organisation = {
 	country: string;
 	state: string;
 	name: string;
-	email?: string;
-	website?: string;
-	phone?: string;
+	emails: OrgEmail[];
+	websites: OrgWebsite[];
+	phones: OrgPhone[];
 	location: {
 		address?: string;
 		lon: number;
@@ -115,11 +131,22 @@ const buildContent = (o: Organisation): string => {
 	let result = `
   <h3 class="font-semibold text-base">${o.name}</h3>
 <address class="inline">${o.location.address ?? "auf Nachfrage"}</address>
-<ul class="list-disc my-4 pl-2 list-inside">`;
+<ul class="my-4 space-y-1 pl-2 list-inside">`;
 
-	if (o.website) result += `<li><a href="${o.website}">Zur Webseite</a></li>`;
-	if (o.email) result += `<li><a href="mailto:${o.email}">E-Mail</a></li>`;
-	if (o.phone) result += `<li>Telefon: <a href="tel:${o.phone}">${o.phone}</a></li>`;
+	const li = (label: string, link: string, icon: string): string => {
+		return `<li>
+		<span aria-hidden=true class=mr-2>${icon}</span>
+		<a href="${link}" class="hover:underline">
+			 ${label}
+		</a>
+	</li>`;
+	};
+
+	for (const { label, url } of o.websites) result += li(label, url, "🌐");
+	for (const { label, email } of o.emails) result += li(label, email, "📧");
+	for (const { label, phone, phone_rfc3966 } of o.phones)
+		result += li(`${label} (${phone})`, phone_rfc3966, "☎");
+
 	result += `</ul>`;
 
 	if (o.activities && o.activities !== "")
